@@ -99,15 +99,20 @@ class Utils {
 	/**
 	 * Check if a plugin is active.
 	 *
-	 * @param  string $plugin  Base plugin path.
+	 * @param  string $plugin_base_file  Base plugin path.
 	 * @return bool
 	 */
-	public static function is_plugin_active( $plugin ) {
+	public static function is_plugin_active( $plugin_base_file ) {
+		// Do not proceed if the base file of the plugin does not exist.
+		if ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin_base_file ) ) {
+			return false;
+		}
+
 		// This filed is required in order to make is_plugin_active in front end.
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-		// Use function that is defined in the global namespace.
-		return \is_plugin_active( $plugin );
+		// Check if the plugin is active.
+		return is_plugin_active( $plugin_base_file );
 	}
 
 	/**
