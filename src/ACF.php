@@ -71,4 +71,60 @@ class ACF {
 
 		return $value;
 	}
+
+	/**
+	 * Echo ACF admin css.
+	 */
+	public static function echo_admin_css() {
+		?>
+		<style type="text/css">
+			/* -----------------------------------------------------------------------
+			 * Group.
+			 * -------------------------------------------------------------------- */
+			.acf-field-group:not(.aura-no-styles) > .acf-label {
+				background-color: #333;
+				color: #fff;
+				margin-bottom: 0;
+				padding: 10px 12px;
+			}
+
+			.acf-field-group:not(.aura-no-styles) > .acf-label > label {
+				margin-bottom: 0;
+			}
+
+			.acf-field-group:not(.aura-no-styles) > .acf-input > .acf-fields {
+				border-color: #333;
+			}
+
+			/* -----------------------------------------------------------------------
+			 * Repeater.
+			 * -------------------------------------------------------------------- */
+			.aura-acf-repeater .acf-repeater .acf-row-handle {
+				position: relative;
+			}
+
+			.aura-acf-repeater .acf-repeater .acf-row-handle span {
+				background-color: #333;
+				color: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				padding-block: 10px 12px;
+			}
+
+			.aura-acf-repeater .acf-repeater > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label {
+				background-color: #333;
+				color: #fff;
+				padding: 10px 15px;
+				margin-top: -15px;
+				margin-inline: -12px;
+			}
+
+			.aura-acf-repeater .acf-repeater > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label > label {
+				margin-bottom: 0;
+			}
+		</style>
+		<?php
+	}
 }
