@@ -107,5 +107,22 @@
 		"**/.git": true,
 		"**/node_modules": true,
 		"**/vendor": true
-	}
+	},
+	"cSpell.words": [
+		"ABSPATH",
+		"autoload",
+		"dashified",
+		"dashify",
+		"dealerdirect",
+		"madebyaura",
+		"phpcodesniffer",
+		"phpcompatibility",
+		"phpcs",
+		"pinterest",
+		"postdata",
+		"trailingslashit",
+		"underscorified",
+		"underscorify",
+		"wpcs"
+	]
 }

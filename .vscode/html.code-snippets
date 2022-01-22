@@ -1,0 +1,103 @@
+{
+	"php single line": {
+		"prefix": "aura php single line",
+		"body": ["<?php $0; ?>"],
+		"scope": "html"
+	},
+	"php multi line": {
+		"prefix": "aura php multi line",
+		"body": ["<?php", "$0;", "?>"],
+		"scope": "html"
+	},
+	"print_r text": {
+		"prefix": "aura debug text",
+		"body": [
+			"<pre><?php echo htmlentities( print_r( '${1:test}', true ) ); ?></pre>$0"
+		],
+		"scope": "html"
+	},
+	"print_r variable": {
+		"prefix": "aura debug var",
+		"body": [
+			"<pre><?php echo htmlentities( print_r( ${1:\\$variable}, true ) ); ?></pre>$0"
+		],
+		"scope": "html"
+	},
+	"var_dump variable": {
+		"prefix": "aura debug dump",
+		"body": [
+			"<pre><?php echo htmlentities( var_dump( ${1:\\$variable} ) ); ?></pre>$0"
+		],
+		"scope": "html"
+	},
+	"if": {
+		"prefix": "aura if",
+		"body": ["<?php if ( ${1:\\$condition} ) : ?>", "\t$0", "<?php endif; ?>"],
+		"scope": "html"
+	},
+	"foreach": {
+		"prefix": "aura foreach",
+		"body": [
+			"<?php foreach ( ${1:\\$items} as ${2:\\$item} ) : ?>",
+			"\t$0",
+			"<?php endforeach; ?>"
+		],
+		"scope": "html"
+	},
+	"echo escaped html": {
+		"prefix": "aura e html",
+		"body": ["<?php echo esc_html( ${1:\\$string} ); ?>$0"],
+		"description": "Echo escaped html",
+		"scope": "html"
+	},
+	"echo escaped translated html": {
+		"prefix": "aura et html",
+		"body": [
+			"<?php echo esc_html__( '${1:string}', 'aura-${2:textdomain}' ); ?>$0"
+		],
+		"scope": "html"
+	},
+	"echo escaped attribute": {
+		"prefix": "aura e attr",
+		"body": ["<?php echo esc_attr( ${1:\\$string} ); ?>$0"],
+		"scope": "html"
+	},
+	"echo escaped translated attribute": {
+		"prefix": "aura et attr",
+		"body": [
+			"<?php echo esc_attr__( '${1:string}', 'aura-${2:textdomain}' ); ?>$0"
+		],
+		"scope": "html"
+	},
+	"echo escaped url": {
+		"prefix": "aura e url",
+		"body": ["<?php echo esc_url( ${1:\\$string} ); ?>$0"],
+		"scope": "html"
+	},
+	"echo kses post": {
+		"prefix": "aura e kses post",
+		"body": ["<?php echo wp_kses_post( ${1:\\$string} ); ?>$0"],
+		"scope": "html"
+	},
+	"echo kses with arguments": {
+		"prefix": "aura e kses",
+		"body": ["<?php echo wp_kses( ${1:\\$string}, [ ${2:'br' => []} ] ); ?>$0"],
+		"scope": "html"
+	},
+	"get template part": {
+		"prefix": "aura tp",
+		"body": ["<?php Base::get_template_part( '${1:button}' ); ?>$0"],
+		"scope": "html"
+	},
+	"get template part with arguments": {
+		"prefix": "aura tpa",
+		"body": [
+			"<?php",
+			"Base::get_template_part( '${1:button}', [",
+			"\t'${2:text}' => '${3:Button}',$0",
+			"] );",
+			"?>"
+		],
+		"scope": "html"
+	}
+}
