@@ -25,11 +25,10 @@
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
-		<exclude name="Generic.CodeAnalysis.ForLoopWithTestFunctionCall.NotAllowed" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
 		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket"/>
 		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments"/>
 		<exclude name="PSR2.Methods.MethodDeclaration.Underscore" />
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
