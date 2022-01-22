@@ -99,11 +99,11 @@ class ACF {
 			/* -----------------------------------------------------------------------
 			 * Repeater.
 			 * -------------------------------------------------------------------- */
-			.aura-acf-repeater .acf-repeater .acf-row-handle {
+			.aura-acf-repeater .acf-repeater.-block .acf-row-handle {
 				position: relative;
 			}
 
-			.aura-acf-repeater .acf-repeater .acf-row-handle span {
+			.aura-acf-repeater .acf-repeater.-block .acf-row-handle span {
 				background-color: #333;
 				color: #fff;
 				position: absolute;
@@ -113,7 +113,7 @@ class ACF {
 				padding-block: 10px 12px;
 			}
 
-			.aura-acf-repeater .acf-repeater > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label {
+			.aura-acf-repeater .acf-repeater.-block > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label {
 				background-color: #333;
 				color: #fff;
 				padding: 10px 15px;
@@ -121,7 +121,7 @@ class ACF {
 				margin-inline: -12px;
 			}
 
-			.aura-acf-repeater .acf-repeater > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label > label {
+			.aura-acf-repeater .acf-repeater.-block > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label > label {
 				margin-bottom: 0;
 			}
 		</style>
