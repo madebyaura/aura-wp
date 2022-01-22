@@ -65,17 +65,17 @@ class Markup {
 	 * @return array
 	 */
 	public static function sort_attrs( $attrs ) {
-		// Move `href` to the begenning of the attrs.
+		// Move `href` to the beginning of the attrs.
 		if ( ! empty( $attrs['href'] ) ) {
 			$attrs = [ 'href' => $attrs['href'] ] + $attrs;
 		}
 
-		// Move `class` to the begenning of the attrs.
+		// Move `class` to the beginning of the attrs.
 		if ( ! empty( $attrs['class'] ) ) {
 			$attrs = [ 'class' => $attrs['class'] ] + $attrs;
 		}
 
-		// Move `id` to the begenning of the attrs.
+		// Move `id` to the beginning of the attrs.
 		if ( ! empty( $attrs['id'] ) ) {
 			$attrs = [ 'id' => $attrs['id'] ] + $attrs;
 		}
@@ -100,7 +100,7 @@ class Markup {
 			// Merge attributes.
 			$classes = self::merge_classes( $explicit['class'], $default['class'] );
 
-			// Remove the class attribute from both default and expilict attributes.
+			// Remove the class attribute from both default and explicit attributes.
 			unset( $default['class'] );
 			unset( $explicit['class'] );
 		}
