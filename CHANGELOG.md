@@ -1,3 +1,7 @@
+## 1.3.0
+
+- Add `PageTitle` class.
+
 ## 1.2.0
 
 - Add `Plugin::get_info()`.
