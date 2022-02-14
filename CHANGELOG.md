@@ -1,3 +1,7 @@
+## 1.3.1
+
+- fix: add multiple plugin support to `Plugin::get_info()`.
+
 ## 1.3.0
 
 - Add `PageTitle` class.
