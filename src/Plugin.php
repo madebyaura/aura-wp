@@ -24,18 +24,19 @@ class Plugin {
 	public static function get_info( $file, $id ) {
 		static $info;
 
-		if ( ! $info ) {
-			$info['slug'] = plugin_basename( dirname( $file ) );
-			$info['url']  = plugin_dir_url( $file );
-			$info['path'] = wp_normalize_path( plugin_dir_path( $file ) );
+		$slug = plugin_basename( dirname( $file ) );
 
+		if ( ! isset( $info[ $slug ] ) ) {
 			if ( ! function_exists( 'get_plugin_data' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 
-			$info['version'] = get_plugin_data( $info['path'] . 'init.php' )['Version'];
+			$info[ $slug ]['slug']    = $slug;
+			$info[ $slug ]['url']     = plugin_dir_url( $file );
+			$info[ $slug ]['path']    = wp_normalize_path( plugin_dir_path( $file ) );
+			$info[ $slug ]['version'] = get_plugin_data( $info[ $slug ]['path'] . 'init.php' )['Version'];
 		}
 
-		return $info[ $id ];
+		return $info[ $slug ][ $id ];
 	}
 }
