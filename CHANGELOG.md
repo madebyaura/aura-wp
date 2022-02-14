@@ -1,3 +1,7 @@
+## 2.0.0
+
+- feat!: change the way `Theme::get_info()` works.
+
 ## 1.3.1
 
 - fix: add multiple plugin support to `Plugin::get_info()`.

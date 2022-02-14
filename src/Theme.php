@@ -17,31 +17,32 @@ class Theme {
 	/**
 	 * Get theme information.
 	 *
-	 * @param string $key  Key.
+	 * @param string $id    Option ID.
+	 * @param string $type  Theme type.
 	 * @return string
 	 */
-	public static function get_info( $key ) {
+	public static function get_info( $id, $type = 'parent' ) {
 		static $info;
 
-		if ( ! $info ) {
-			$info['slug'] = get_template();
-			$info['url']  = trailingslashit( get_template_directory_uri() );
-			$info['path'] = trailingslashit( wp_normalize_path( get_template_directory() ) );
+		$type = 'child' === $type ?: 'parent';
 
-			if ( is_child_theme() ) {
-				$info['version'] = wp_get_theme( wp_get_theme()->get( 'Template' ) )->get( 'Version' );
-			} else {
-				$info['version'] = wp_get_theme()->get( 'Version' );
-			}
-
-			// Child theme.
-			$info['child_slug']    = get_stylesheet();
-			$info['child_url']     = trailingslashit( get_stylesheet_directory_uri() );
-			$info['child_path']    = trailingslashit( wp_normalize_path( get_stylesheet_directory() ) );
-			$info['child_version'] = wp_get_theme()->get( 'Version' );
+		// Parent theme.
+		if ( 'parent' === $type && isset( $info['parent'] ) ) {
+			$info['parent']['slug']    = get_template();
+			$info['parent']['url']     = trailingslashit( get_template_directory_uri() );
+			$info['parent']['path']    = trailingslashit( wp_normalize_path( get_template_directory() ) );
+			$info['parent']['version'] = is_child_theme() ? wp_get_theme( wp_get_theme()->get( 'Template' ) )->get( 'Version' ) : wp_get_theme()->get( 'Version' );
 		}
 
-		return $info[ $key ];
+		// Child theme.
+		if ( 'child' === $type && isset( $info['child'] ) ) {
+			$info['child']['slug']    = get_stylesheet();
+			$info['child']['url']     = trailingslashit( get_stylesheet_directory_uri() );
+			$info['child']['path']    = trailingslashit( wp_normalize_path( get_stylesheet_directory() ) );
+			$info['child']['version'] = wp_get_theme()->get( 'Version' );
+		}
+
+		return $info[ $type ][ $id ];
 	}
 
 	/**
