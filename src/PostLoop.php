@@ -122,13 +122,13 @@ class PostLoop {
 			</div>
 
 			<?php if ( true === $this->args['pagination'] ) : ?>
+				<?php $this->args['pagination_args']['query'] = $this->query; ?>
 				<?php Theme::get_template_part( $this->args['pagination_slug'], $this->args['pagination_args'] ); ?>
 			<?php endif; ?>
 
 		<?php else : ?>
 
 			<?php if ( true === $this->args['nothing_found'] ) : ?>
-				<?php $this->args['pagination_args']['query'] = $this->query; ?>
 				<?php Theme::get_template_part( $this->args['nothing_found_slug'] ); ?>
 			<?php endif; ?>
 

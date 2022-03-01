@@ -1,3 +1,7 @@
+## 1.3.4
+
+- fix: no arguments were being passed to pagination in `PostLoop->render_posts`.
+
 ## 1.3.3
 
 - fix: pass `WP_Query` instance to pagination template part in `render_posts` method of `PostLoop` class.
