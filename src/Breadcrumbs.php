@@ -72,11 +72,11 @@ class Breadcrumbs {
 						<?php echo esc_html( $crumb['text'] ); ?>
 
 						<?php if ( $index !== $last ) : ?>
-							</a><!-- .aura-breadcrumbs__item-link -->
+							</a>
 						<?php endif; ?>
-					</div><!-- .aura-breadcrumbs__item -->
+					</div>
 				<?php endforeach; ?>
-			</div><!-- .aura-breadcrumbs -->
+			</div>
 		<?php
 	}
 
