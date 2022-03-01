@@ -1,6 +1,7 @@
 ## 1.3.2 (unreleased)
 
 - fix: pagination should be outside posts in `PostLoop` class.
+- qc: remove closing html tag comments.
 
 ## 1.3.1
 
