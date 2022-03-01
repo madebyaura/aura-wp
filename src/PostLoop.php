@@ -119,7 +119,7 @@ class PostLoop {
 					<?php $this->query->the_post(); ?>
 					<?php Theme::get_template_part( "post-layouts/{$this->args['layout']}", $this->args['layout_args'] ); ?>
 				<?php endwhile; ?>
-			</div><!-- aura-posts -->
+			</div>
 
 			<?php if ( true === $this->args['pagination'] ) : ?>
 				<?php Theme::get_template_part( $this->args['pagination_slug'], $this->args['pagination_args'] ); ?>
