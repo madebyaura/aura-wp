@@ -1,3 +1,7 @@
+## 1.3.2 (unreleased)
+
+- fix: pagination should be outside posts in `PostLoop` class.
+
 ## 1.3.1
 
 - fix: add multiple plugin support to `Plugin::get_info()`.
