@@ -1,3 +1,7 @@
+## 1.3.3
+
+- fix: pass `WP_Query` instance to pagination template part in `render_posts` method of `PostLoop` class.
+
 ## 1.3.2
 
 - fix: pagination should be outside posts in `PostLoop` class.
