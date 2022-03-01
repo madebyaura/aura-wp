@@ -128,6 +128,7 @@ class PostLoop {
 		<?php else : ?>
 
 			<?php if ( true === $this->args['nothing_found'] ) : ?>
+				<?php $this->args['pagination_args']['query'] = $this->query; ?>
 				<?php Theme::get_template_part( $this->args['nothing_found_slug'] ); ?>
 			<?php endif; ?>
 
