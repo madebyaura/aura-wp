@@ -111,7 +111,7 @@ class PostLoop {
 	 * @access public
 	 */
 	public function render_posts() {
-		if ( ! $this->query->have_posts() ) :
+		if ( $this->query->have_posts() ) :
 		?>
 
 			<div <?php Markup::echo_attrs( $this->attrs ); ?>>
