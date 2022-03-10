@@ -20,8 +20,16 @@
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
+	"cSpell.customDictionaries": {
+		"workspace-dictionary": {
+			"name": "workspace-dictionary",
+			"path": "./.vscode/dictionary.txt",
+			"addWords": true,
+			"scope": "workspace"
+		}
+	},
 	"cSpell.words": [
-		"ABSPATH",
+		"abspath",
 		"autoload",
 		"dashified",
 		"dashify",
@@ -38,7 +46,6 @@
 		"woocommerce",
 		"wpcs"
 	],
-
 	"editor.insertSpaces": false,
 	"editor.quickSuggestions": {
 		"comments": true
@@ -49,12 +56,20 @@
 	"editor.wordWrap": "on",
 	"files.eol": "\n",
 	"files.exclude": {
-		"**/node_modules": true
+		"**/node_modules": true,
+		"**/vendor": true,
+		"**/package-lock.json": true,
+		"**/composer.lock": true
 	},
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
 	"githubPullRequests.defaultMergeMethod": "squash",
+	"intelephense.environment.includePaths": [
+		"./vendor",
+		"./../../plugins/advanced-custom-fields-pro",
+		"./../../plugins/wicked-folders"
+	],
 	"intelephense.format.enable": false,
 	"intelephense.stubs": [
 		"apache",
@@ -145,6 +160,9 @@
 	"search.exclude": {
 		"**/.git": true,
 		"**/node_modules": true,
-		"**/vendor": true
-	}
+		"**/vendor": true,
+		"**/package-lock.json": true,
+		"**/composer.lock": true
+	},
+	"stylelint.validate": ["scss"]
 }
