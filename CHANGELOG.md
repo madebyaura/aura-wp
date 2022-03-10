@@ -1,3 +1,7 @@
+## 1.3.5
+
+- fix: ACF group CSS.
+
 ## 1.3.4
 
 - fix: no arguments were being passed to pagination in `PostLoop->render_posts`.

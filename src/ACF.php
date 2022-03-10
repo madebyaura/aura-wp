@@ -81,18 +81,18 @@ class ACF {
 			/* -----------------------------------------------------------------------
 			 * Group.
 			 * -------------------------------------------------------------------- */
-			.acf-field-group:not(.aura-no-styles) > .acf-label {
+			.acf-fields.-top > .acf-field-group:not(.aura-no-styles) > .acf-label {
 				background-color: #333;
 				color: #fff;
 				margin-bottom: 0;
 				padding: 10px 12px;
 			}
 
-			.acf-field-group:not(.aura-no-styles) > .acf-label > label {
+			.acf-fields.-top > .acf-field-group:not(.aura-no-styles) > .acf-label > label {
 				margin-bottom: 0;
 			}
 
-			.acf-field-group:not(.aura-no-styles) > .acf-input > .acf-fields {
+			.acf-fields.-top > .acf-field-group:not(.aura-no-styles) > .acf-input > .acf-fields {
 				border-color: #333;
 			}
 
