@@ -17,6 +17,8 @@ Thumbs.db
 bower_components
 node_modules
 /vendor
+package-lock.json
+composer.lock
 
 # Source Maps #
 ###############
@@ -44,3 +46,7 @@ yarn-error.log*
 #############
 *.sql
 *.sqlite
+
+# Test folder #
+###################
+/.ignore
