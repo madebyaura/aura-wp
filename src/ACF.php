@@ -124,6 +124,14 @@ class ACF {
 			.aura-acf-repeater .acf-repeater.-block > .acf-table > tbody > tr > .acf-fields > .acf-field:first-of-type > .acf-label > label {
 				margin-bottom: 0;
 			}
+
+			/* -----------------------------------------------------------------------
+			 * Limit width of fields of on New User, Edit User, Profile screens.
+			 * -------------------------------------------------------------------- */
+			:where(.user-new-php, .user-edit-php, .profile-php) .acf-field .acf-input {
+				display: block;
+				max-width: 370px;
+			}
 		</style>
 		<?php
 	}
