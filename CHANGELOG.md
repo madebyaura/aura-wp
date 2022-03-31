@@ -1,3 +1,7 @@
+## 1.3.6
+
+- fix: ACF CSS on user screens.
+
 ## 1.3.5
 
 - fix: ACF group CSS.
