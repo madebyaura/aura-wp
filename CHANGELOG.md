@@ -1,3 +1,7 @@
+## 2.0.0
+
+refactor: rename PostLoop to EntryLoop
+
 ## 1.3.6
 
 - fix: ACF CSS on user screens.
