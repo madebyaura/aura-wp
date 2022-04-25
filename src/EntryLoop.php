@@ -1,6 +1,6 @@
 <?php
 /**
- * PostLoop.
+ * EntryLoop.
  *
  * @package MadeByAura\WP
  * @author  MadeByAura.com
@@ -11,9 +11,9 @@ namespace MadeByAura\WP;
 defined( 'ABSPATH' ) || die();
 
 /**
- * PostLoop.
+ * EntryLoop.
  */
-class PostLoop {
+class EntryLoop {
 	/**
 	 * Arguments.
 	 *
@@ -75,8 +75,8 @@ class PostLoop {
 
 		// Classes.
 		$classes[] = $this->args['class'] ? $this->args['class'] : '';
-		$classes[] = 'aura-posts';
-		$classes[] = $this->args['layout'] ? "aura-posts--{$this->args['layout']}" : '';
+		$classes[] = 'aura-entries';
+		$classes[] = $this->args['layout'] ? "aura-entries--{$this->args['layout']}" : '';
 
 		// Merge implicit classes with explicit classes.
 		if ( ! empty( $this->attrs['class'] ) ) {
@@ -96,28 +96,28 @@ class PostLoop {
 	}
 
 	/**
-	 * Have posts.
+	 * Have entries.
 	 *
 	 * @access public
 	 * @return bool
 	 */
-	public function have_posts() {
+	public function have_entries() {
 		return $this->query->have_posts();
 	}
 
 	/**
-	 * Render posts.
+	 * Render entries.
 	 *
 	 * @access public
 	 */
-	public function render_posts() {
+	public function render_entries() {
 		if ( $this->query->have_posts() ) :
 		?>
 
 			<div <?php Markup::echo_attrs( $this->attrs ); ?>>
 				<?php while ( $this->query->have_posts() ) : ?>
 					<?php $this->query->the_post(); ?>
-					<?php Theme::get_template_part( "post-layouts/{$this->args['layout']}", $this->args['layout_args'] ); ?>
+					<?php Theme::get_template_part( "entry-layouts/{$this->args['layout']}", $this->args['layout_args'] ); ?>
 				<?php endwhile; ?>
 			</div>
 
