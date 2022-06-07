@@ -2,6 +2,7 @@
 
 feat!: add dynamic hooks to `Theme::get_template_part()`.
 feat!: use trait instead of abstract class for Singleton.
+feat!: Update EntryLoop according to new theme file structure.
 dx: change minimum PHP version to 7.4.
 
 ## 2.0.0

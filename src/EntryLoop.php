@@ -76,7 +76,7 @@ class EntryLoop {
 		// Classes.
 		$classes[] = $this->args['class'] ? $this->args['class'] : '';
 		$classes[] = 'aura-entries';
-		$classes[] = $this->args['layout'] ? "aura-entries--{$this->args['layout']}" : '';
+		$classes[] = $this->args['layout'] ? "aura-{$this->args['layout']}-entries" : '';
 
 		// Merge implicit classes with explicit classes.
 		if ( ! empty( $this->attrs['class'] ) ) {
@@ -117,13 +117,23 @@ class EntryLoop {
 			<div <?php Markup::echo_attrs( $this->attrs ); ?>>
 				<?php while ( $this->query->have_posts() ) : ?>
 					<?php $this->query->the_post(); ?>
-					<?php Theme::get_template_part( "entry-layouts/{$this->args['layout']}", $this->args['layout_args'] ); ?>
+					<?php
+					Theme::get_template_part(
+						"entry/{$this->args['layout']}",
+						$this->args['layout_args'],
+					);
+					?>
 				<?php endwhile; ?>
 			</div>
 
 			<?php if ( true === $this->args['pagination'] ) : ?>
 				<?php $this->args['pagination_args']['query'] = $this->query; ?>
-				<?php Theme::get_template_part( $this->args['pagination_slug'], $this->args['pagination_args'] ); ?>
+				<?php
+				Theme::get_template_part(
+					$this->args['pagination_slug'],
+					$this->args['pagination_args'],
+				);
+				?>
 			<?php endif; ?>
 
 		<?php else : ?>
