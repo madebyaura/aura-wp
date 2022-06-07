@@ -1,3 +1,7 @@
+## 3.0.0
+
+dx: change minimum PHP version to 7.4.
+
 ## 2.0.0
 
 refactor: rename PostLoop to EntryLoop
