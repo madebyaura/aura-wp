@@ -1,5 +1,6 @@
 ## 3.0.0
 
+feat!: add dynamic hooks to `Theme::get_template_part()`.
 dx: change minimum PHP version to 7.4.
 
 ## 2.0.0

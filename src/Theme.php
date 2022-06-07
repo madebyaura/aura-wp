@@ -54,34 +54,53 @@ class Theme {
 	 */
 	public static function get_template_part( $slug, $args = [] ) {
 		/**
-		 * Filter status of template part.
+		 * Dynamically filters whether to short-circuit template part.
 		 *
-		 * @param bool   $status  Status of template part.
-		 * @param string $slug    Slug of template part.
-		 * @param array  $args    Arguments passed to template part.
+		 * @param bool   $disabled  Whether to short-circuit template part.
+		 *                          Default false
+		 * @param string $slug      Slug of template part.
+		 * @param array  $args      Arguments passed to template part.
 		 */
-		$status = apply_filters( 'aura_wp_template_part_status', true, $slug, $args );
+		$disabled = apply_filters( "aura_theme_template_part_disable_{$slug}", false, $slug, $args );
 
-		// Do not proceed if status of template part is not true.
-		if ( true !== $status ) {
+		/**
+		 * Filters whether to short-circuit template part.
+		 *
+		 * @param bool   $disabled  Whether to short-circuit template part.
+		 *                          Default false
+		 * @param string $slug      Slug of template part.
+		 * @param array  $args      Arguments passed to template part.
+		 */
+		$disabled = apply_filters( 'aura_theme_template_part_disable', $disabled, $slug, $args );
+
+		// Do not proceed if template part is disabled.
+		if ( true === $disabled ) {
 			return;
 		}
 
 		/**
-		 * Filter slug of template part.
+		 * Dynamically filters arguments passed to template part.
 		 *
-		 * @param string $slug  Slug of template part.
 		 * @param array  $args  Arguments passed to template part.
+		 * @param string $slug  Slug of template part.
 		 */
-		$slug = apply_filters( 'aura_wp_template_part_slug', $slug, $args );
+		$args = apply_filters( "aura_theme_template_part_args_{$slug}", $args, $slug );
 
 		/**
-		 * Filter arguments passed to template part.
+		 * Filters arguments passed to template part.
 		 *
 		 * @param array  $args  Arguments passed to template part.
 		 * @param string $slug  Slug of template part.
 		 */
-		$args = apply_filters( 'aura_wp_template_part_args', $args, $slug );
+		$args = apply_filters( 'aura_theme_template_part_args', $args, $slug );
+
+		/**
+		 * Dynamically fires before `get_template_part()` is called.
+		 *
+		 * @param string $slug  Slug of template part.
+		 * @param array  $args  Arguments passed to template part.
+		 */
+		do_action( "aura_theme_template_part_before_{$slug}", $slug, $args );
 
 		/**
 		 * Fires before `get_template_part()` is called.
@@ -89,9 +108,17 @@ class Theme {
 		 * @param string $slug  Slug of template part.
 		 * @param array  $args  Arguments passed to template part.
 		 */
-		do_action( 'aura_wp_template_part_before', $slug, $args );
+		do_action( 'aura_theme_template_part_before', $slug, $args );
 
 		get_template_part( "template-parts/{$slug}", null, $args );
+
+		/**
+		 * Dynamically fires after `get_template_part()` is called.
+		 *
+		 * @param string $slug  Slug of template part.
+		 * @param array  $args  Arguments passed to template part.
+		 */
+		do_action( "aura_theme_template_part_after_{$slug}", $slug, $args );
 
 		/**
 		 * Fires after `get_template_part()` is called.
@@ -99,6 +126,6 @@ class Theme {
 		 * @param string $slug  Slug of template part.
 		 * @param array  $args  Arguments passed to template part.
 		 */
-		do_action( 'aura_wp_template_part_after', $slug, $args );
+		do_action( 'aura_theme_template_part_after', $slug, $args );
 	}
 }
