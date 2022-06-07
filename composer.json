@@ -15,5 +15,10 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
 		"phpcompatibility/php-compatibility": "^9.3",
 		"wp-coding-standards/wpcs": "^2.3"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
 }

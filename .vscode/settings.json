@@ -29,22 +29,63 @@
 		}
 	},
 	"cSpell.words": [
+		"absint",
 		"abspath",
+		"aligncenter",
+		"alignleft",
+		"alignnone",
+		"alignright",
 		"autoload",
-		"dashified",
+		"autoloader",
+		"autoloads",
+		"bloginfo",
+		"browserslist",
+		"bypostauthor",
+		"customizer",
+		"dashicons",
 		"dashify",
 		"dealerdirect",
+		"eicon",
+		"elementor",
+		"focusring",
+		"gulpfile",
+		"gulpif",
+		"headertext",
+		"headerurl",
+		"iife",
+		"kirki",
+		"kses",
+		"linebreak",
 		"madebyaura",
+		"metabox",
+		"minmax",
+		"necolas",
+		"noopener",
 		"phpcodesniffer",
 		"phpcompatibility",
 		"phpcs",
 		"pinterest",
 		"postdata",
+		"postid",
+		"recaptcha",
+		"rollupjs",
+		"shortcode",
+		"shortcodes",
+		"snipver",
+		"squizlabs",
+		"stylelint",
+		"stylelintrc",
+		"textwidget",
+		"topbar",
 		"trailingslashit",
-		"underscorified",
-		"underscorify",
+		"uglifycss",
+		"unslash",
+		"userdata",
+		"widgettitle",
 		"woocommerce",
-		"wpcs"
+		"wpautop",
+		"wpcs",
+		"wpseo"
 	],
 	"editor.insertSpaces": false,
 	"editor.quickSuggestions": {
@@ -56,19 +97,18 @@
 	"editor.wordWrap": "on",
 	"files.eol": "\n",
 	"files.exclude": {
+		"**/composer.lock": true,
 		"**/node_modules": true,
-		"**/vendor": true,
-		"**/package-lock.json": true,
-		"**/composer.lock": true
+		"**/package-lock.json": true
 	},
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
 	"githubPullRequests.defaultMergeMethod": "squash",
 	"intelephense.environment.includePaths": [
-		"./vendor",
 		"./../../plugins/advanced-custom-fields-pro",
-		"./../../plugins/wicked-folders"
+		"./../../plugins/woocommerce",
+		"./vendor"
 	],
 	"intelephense.format.enable": false,
 	"intelephense.stubs": [
@@ -145,24 +185,31 @@
 		"zlib",
 		"wordpress"
 	],
+	"logViewer.showStatusBarItemOnChange": true,
+	"logViewer.watch": [
+		{
+			"title": "debug.log",
+			"pattern": "./../../debug.log"
+		}
+	],
 	"php.suggest.basic": false,
 	"phpsab.snifferShowSources": true,
 	"phpsab.snifferArguments": [
-		"--severity=1",
 		"--error-severity=1",
+		"--severity=1",
 		"--warning-severity=1"
 	],
 	"phpsab.fixerArguments": [
-		"--severity=1",
 		"--error-severity=1",
+		"--severity=1",
 		"--warning-severity=1"
 	],
 	"search.exclude": {
 		"**/.git": true,
+		"**/composer.lock": true,
 		"**/node_modules": true,
-		"**/vendor": true,
 		"**/package-lock.json": true,
-		"**/composer.lock": true
+		"**/vendor": true
 	},
 	"stylelint.validate": ["scss"]
 }
